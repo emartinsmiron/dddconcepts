@@ -28,7 +28,7 @@ describe("Customer repository test", () => {
   it("should create a customer", async () => {
     const customerRepository = new CustomerRepository();
     const customer = new Customer("1", "Eduardo");
-    const address = new Address("Rua dos Lilazes", 118, "12240-110", "São José dos Campos");
+    const address = new Address("Rua dos um", 118, "122000", "São José dos Campos");
     customer.setAddress(address);
 
     customerRepository.create(customer);
@@ -61,7 +61,7 @@ describe("Customer repository test", () => {
   it("Should return find a customer", async () =>{
     const customerRepository = new CustomerRepository();
     const customer = new Customer("1", "Eduardo");
-    const address = new Address("Rua dos Lilazes", 118, "12240-110", "São José dos Campos");
+    const address = new Address("Rua dos um", 118, "122000", "São José dos Campos");
     customer.setAddress(address);
 
     customerRepository.create(customer);
@@ -86,7 +86,7 @@ describe("Customer repository test", () => {
     const customerRepository = new CustomerRepository();
     const customer = new Customer("1", "Eduardo");
     const customer2 = new Customer("2", "Eduardo");
-    const address = new Address("Rua dos Lilazes", 118, "12240-110", "São José dos Campos");
+    const address = new Address("Rua dos um", 118, "122000", "São José dos Campos");
     customer.setAddress(address);
     customer2.setAddress(address);
 

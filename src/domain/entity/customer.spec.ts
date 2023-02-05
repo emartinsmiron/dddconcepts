@@ -44,7 +44,7 @@ describe("Customer unit tests", () => {
  
         //Arrange
          let customer = new Customer("123", "Eduardo");
-         customer.setAddress(new Address("Rua dos Lilazes", 118, "12240-110", "São José dos Campos"));
+         customer.setAddress(new Address("Rua dos um", 118, "122000", "São José dos Campos"));
  
         //Act
         customer.activate();
@@ -58,7 +58,7 @@ describe("Customer unit tests", () => {
  
         //Arrange
          let customer = new Customer("123", "Eduardo");
-         customer.setAddress(new Address("Rua dos Lilazes", 118, "12240-110", "São José dos Campos"));
+         customer.setAddress(new Address("Rua dos um", 118, "122000", "São José dos Campos"));
  
         //Act
         customer.activate();
@@ -75,7 +75,7 @@ describe("Customer unit tests", () => {
  
         //Arrange
          let customer = new Customer("123", "Eduardo");
-         customer.setAddress(new Address("Rua dos Lilazes", 118, "12240-110", "São José dos Campos"));
+         customer.setAddress(new Address("Rua dos um", 118, "122000", "São José dos Campos"));
  
         //Act
         customer.activate();
