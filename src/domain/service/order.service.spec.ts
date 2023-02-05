@@ -1,12 +1,10 @@
 import Customer from "../entity/customer";
 import Order from "../entity/order";
 import OrderItem from "../entity/order_item";
-import Product from "../entity/product";
 import OrderService from "./order.service";
-import ProductService from "./product.service";
 
-describe("Order Service Unit Test", () =>{
-    it("Should sum total of a order", () =>{
+describe("Order Service Unit Test", () => {
+    it("Should sum total of a order", () => {
 
         const item = new OrderItem("1", "Item 1", 100, "1", 1);
         const item2 = new OrderItem("2", "Item 2", 200, "1", 2);

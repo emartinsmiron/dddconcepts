@@ -26,9 +26,6 @@ export default class OrderItemModel extends Model {
   @ForeignKey(() => OrderModel)
   declare orderId: string;
 
-  @BelongsTo(() => OrderModel)
-  declare order: OrderModel;
-
   @Column({ allowNull: false })
   declare quantity: number;
 
