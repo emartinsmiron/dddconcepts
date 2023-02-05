@@ -17,7 +17,7 @@ export default class CustomerModel extends Model {
   declare active: boolean;
 
   @Column({ allowNull: false })
-  declare rewardPoints: number;
+  declare reward_points: number;
 
   @Column({ allowNull: false })
   declare street: string;

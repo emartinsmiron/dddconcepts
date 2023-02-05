@@ -15,7 +15,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface{
             zipcode: entity.address.zipcode,
             city: entity.address.city,
             active: entity.isActive,
-            rewardPoints: entity.rewardPoints,
+            reward_points: entity.rewardPoints,
           });
     }
     async update(entity: Customer): Promise<void> {
@@ -28,7 +28,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface{
             zipcode: entity.address.zipcode,
             city: entity.address.city,
             active: entity.isActive,
-            rewardPoints: entity.rewardPoints,
+            reward_points: entity.rewardPoints,
           },{
             where:{id: entity.id}
           });
@@ -53,7 +53,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface{
     
         const customers = customerModels.map((customerModels) => {
           let customer = new Customer(customerModels.id, customerModels.name);
-          customer.addRewardPoints(customerModels.rewardPoints);
+          customer.addRewardPoints(customerModels.reward_points);
           const address = new Address(
             customerModels.street,
             customerModels.number,
