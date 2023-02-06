@@ -1,24 +1,45 @@
 @startuml classdiagram
 allow_mixing
 interface EventDispatcherInterface{
-    notify(event: T): void;
-    register(eventName: string, eventHandler: EventHandlerInterface): void;
-    unregister(eventName: string, eventHandler: EventHandlerInterface): void;
-    unregisterAll(): void;
+    notify();
+    register();
+    unregister();
+    unregisterAll();
 }
 
-class EventDispatcher implements EventDispatcherInterface{
-
+class EventDispatcher{
+    notify();
+    register();
+    unregister();
+    unregisterAll();
 }
 
 interface EventHandlerInterface{
-    handle(event: T): void;
+    handle();
 }
+
+class NotifyAddressChangeEvent{
+    handle();
+}
+
 
 interface EventInterface{
     dateTimeOcurred: Date;
     eventData: any;
 }
 
+ class CustomerCreatedEvent{
+
+ }
+
+EventDispatcherInterface <|.. EventDispatcher
+
+EventDispatcherInterface o.. EventInterface
+
+EventDispatcherInterface o.. EventHandlerInterface
+
+EventInterface <|.. CustomerCreatedEvent
+
+EventHandlerInterface <|.. NotifyAddressChangeEvent
 
 @enduml
