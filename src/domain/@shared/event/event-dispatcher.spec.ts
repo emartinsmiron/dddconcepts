@@ -7,6 +7,7 @@ import SendConsoleLog2Handler from "../../customer/event/handler/send-console-lo
 import SendEmailWhenProductIsCreatedHandler from "../../product/event/handler/send-email-when-product-is-created.handler";
 import ProductCreatedEvent from "../../product/event/product-created.event";
 import EventDispatcher from "./event-dispatcher";
+import CustomerChangeAddressEvent from "../../customer/event/customer-change-address.event";
 
 describe("Domain Event Testes", () =>{
     it("Should register event handler", () =>{
@@ -89,14 +90,14 @@ describe("Domain Event Testes", () =>{
         let customer = new Customer("123", "Eduardo");
         customer.setAddress(new Address("Rua dos um", 118, "122000", "São José dos Campos"));
 
-        const customerCreatedEvent = new CustomerCreatedEvent(customer);
+        const customerChangeAddressEvent = new CustomerChangeAddressEvent(customer);
         const spyEventHandler = jest.spyOn(eventHandler, "handle");
 
-        eventDispatcher.register("CustomerCreatedEvent", eventHandler);
+        eventDispatcher.register("CustomerChangeAddressEvent", eventHandler);
 
-        expect(eventDispatcher.getEventHandlers["CustomerCreatedEvent"][0]).toMatchObject(eventHandler);
+        expect(eventDispatcher.getEventHandlers["CustomerChangeAddressEvent"][0]).toMatchObject(eventHandler);
 
-        eventDispatcher.notify(customerCreatedEvent);
+        eventDispatcher.notify(customerChangeAddressEvent);
 
         expect(spyEventHandler).toHaveBeenCalled();
     });
