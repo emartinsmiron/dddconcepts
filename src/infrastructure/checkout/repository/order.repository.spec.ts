@@ -191,18 +191,20 @@ it("should update a order", async () => {
     include: ["items"],
   });
 
+  console.log(orderModel?.toJSON())
+
   expect(orderModel.toJSON()).toStrictEqual({
     id: "1",
     customer_id: customer.id,
     total: orderUp.total(),
     items: [
       {
-        id: orderItem.id,
-        name: orderItem.name,
-        price: orderItem.price,
-        quantity: orderItem.quantity,
+        id: orderItemUp.id,
+        name: orderItemUp.name,
+        price: orderItemUp.price,
+        quantity: orderItemUp.quantity,
         order_id: order.id,
-        product_id: orderItem.productId,
+        product_id: orderItemUp.productId,
       },
     ],
   });
