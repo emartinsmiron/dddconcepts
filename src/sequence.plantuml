@@ -1,0 +1,24 @@
+@startuml classdiagram
+allow_mixing
+interface EventDispatcherInterface{
+    notify(event: T): void;
+    register(eventName: string, eventHandler: EventHandlerInterface): void;
+    unregister(eventName: string, eventHandler: EventHandlerInterface): void;
+    unregisterAll(): void;
+}
+
+class EventDispatcher implements EventDispatcherInterface{
+
+}
+
+interface EventHandlerInterface{
+    handle(event: T): void;
+}
+
+interface EventInterface{
+    dateTimeOcurred: Date;
+    eventData: any;
+}
+
+
+@enduml
